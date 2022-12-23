@@ -81,7 +81,6 @@ local ThemeManager = {} do
 		groupbox:AddLabel('Accent color'):AddColorPicker('AccentColor', { Default = self.Library.AccentColor });
 		groupbox:AddLabel('Outline color'):AddColorPicker('OutlineColor', { Default = self.Library.OutlineColor });
 		groupbox:AddLabel('Font color')	:AddColorPicker('FontColor', { Default = self.Library.FontColor });
-                groupbox:AddLabel('Font Outline')	:AddColorPicker('FontOutline', { Default = self.Library.FontOutline });
 
 		local ThemesArray = {}
 		for Name, Theme in next, self.BuiltInThemes do
@@ -166,7 +165,7 @@ local ThemeManager = {} do
 		end
 
 		local theme = {}
-		local fields = { "FontColor", "FontOutline", "MainColor", "AccentColor", "BackgroundColor", "OutlineColor" }
+		local fields = { "FontColor", "MainColor", "AccentColor", "BackgroundColor", "OutlineColor" }
 
 		for _, field in next, fields do
 			theme[field] = Options[field].Value:ToHex()
